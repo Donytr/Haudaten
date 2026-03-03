@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="/_css/common.css" />
+		<link rel="stylesheet" href="/_fonts/fonts.css" />
+		<title>{{ title }}</title>
+	</head>
+	<body>
+		{% include "layouts/en_topnav.html" %}
+		<article>
+	    {{ content | safe }}
+		</article>
+		{% include "layouts/en_footer.html" %}
+	</body>
+</html>

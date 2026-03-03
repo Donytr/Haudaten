@@ -1,0 +1,20 @@
+@font-face { /* headings */
+        font-family: 'Tektur';
+        font-style: normal;
+        font-weight: bold;
+        src: url(Tektur.ttf);
+}
+@font-face { /* text */
+        font-family: 'Oxanium';
+        font-style: normal;
+        font-weight: normal;
+        src: url(Oxanium.ttf);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Tektur', sans-serif;
+}
+
+body {
+    font-family: 'Oxanium', sans-serif;
+}
