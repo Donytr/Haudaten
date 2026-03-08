@@ -1,8 +1,13 @@
 :root {
-    --text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
-    --haudaten_green: #00661B;
-    --haudaten_red: #ee0004;
-    --haudaten_red_hover: #db0004;
+    --text_outline: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+    --haudaten_gray: #B2B2B2;
+    --haudaten_gray_light: #D4D4D4;
+    --haudaten_green: #2E7B21;
+    --haudaten_green_light: #448736;
+    --haudaten_red: #E51632;
+    --haudaten_red_hover: #BE132A;
+
+    --topnav-height: 1.8rem;
 }
 
 /* body */
@@ -12,11 +17,66 @@ body {
     font-size: 1em;
     min-height: 100vh;
 }
+div.twoColumn { /* Two-column layout (for entry pages) */
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: auto
+}
+
 article {
-    margin-top: 1.5rem;
-    padding: 1rem;
+    margin-top: var(--topnav-height);
+    padding: 2rem;
     display: flex;
     flex-direction: column;
+    min-height: 90vh; /* To force footer to the bottom of the page */
+}
+
+article.entry {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+}
+
+article p {
+    text-align: justify;
+
+}
+
+/* sidebar */
+nav.sidebar {
+    margin-top: var(--topnav-height);
+    position: fixed;
+    height: 100%;
+    width: 20vw;
+    grid-column: 1 / 2;
+    border-right: 2px solid black;
+    overflow-y: scroll;
+    background-color: var(--haudaten_gray_light);
+}
+nav.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    padding-bottom: 1.75rem; /* prevent last item being displayed below scrollable area */
+}
+nav.sidebar ul li {
+    display: block;
+    border-bottom: 1px solid black;
+}
+nav.sidebar ul li h2 {
+    text-align: center;
+    margin: 0;
+    padding: 0.5rem;
+    font-size: 1.25rem;
+    color: white;
+    text-shadow: var(--text_outline);
+    background-color: var(--haudaten_gray);
+}
+nav.sidebar ul li a {
+    text-decoration: none;
+    display: inline-block;
+    color: black;
+    width: 100%;
+    padding: 0.3rem 0.3rem 0.3rem 1.5rem;
 }
 
 /* Topnav */
@@ -24,10 +84,11 @@ nav.topContainer {
     display: fixed;
     top: 0;
     width: 100%;
-    max-height: 1.5em;
+    max-height: var(--topnav-height);
     padding: 0;
     position: fixed;
     top: 0;
+    z-index: 999;
 }
 div.topnav {
     display: flex;
@@ -57,11 +118,25 @@ div.topnav a:hover {
 div.header {
     display: block;
     padding: 2rem 1rem;
-    margin: -1rem -1rem 0.5rem -1rem;
+    margin: -2rem -2rem 0.5rem -2rem;
     background-color: var(--haudaten_green);
     color: white;
     border-bottom: 1px solid black;
-    text-shadow: var(--text-shadow);
+    text-shadow: var(--text_outline);
+}
+
+/* Breadcrumb */
+nav.breadcrumb {
+    display: block;
+    padding: 0.5rem 1rem 0.5rem 2.5rem;
+    margin: -2rem -2rem 1.25rem -2rem;
+    background-color: var(--haudaten_green_light);
+    color: white;
+    border-bottom: 2px solid black;
+    border-top: 1px solid black;
+}
+nav.breadcrumb a {
+    color: white;
 }
 
 /* Footer */
@@ -71,9 +146,12 @@ footer {
     background-color: var(--haudaten_green);
     color: white;
     border-top: 1px solid black;
-    text-shadow: var(--text-shadow);
+    text-shadow: var(--text_outline);
     position: relative;
     bottom: 0;
+    text-align: center;
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
 }
 
 /* Headings */
@@ -84,7 +162,28 @@ h1 {
 }
 
 /* Text */
+p {
+    margin-top: 0.25rem
+}
 p.aboveH1 {
     margin: 0;
     text-align: center;
+}
+article h2 {
+    border-bottom: 1px solid black;
+}
+
+article h3 {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+/* Media queries */
+@media (max-width: 1125px) {
+    div.twoColumn {
+        grid-template-columns: 23fr 77fr;
+    }
+    nav.sidebar {
+        width: 23vw;
+    }
 }

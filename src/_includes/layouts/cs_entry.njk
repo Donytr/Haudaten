@@ -8,9 +8,16 @@
 	</head>
 	<body>
 		{% include "layouts/cs_topnav.html" %}
-		<article>
-	    	{{ content | safe }}
-		</article>
-		{% include "layouts/cs_footer.html" %}
+		<div class="twoColumn">
+			{% include sidebar %}
+			<article class="entry">
+				<div class="header">
+					<p class="aboveH1">{{ aboveHeading }}</p>
+					<h1>{{ heading }}</h1>
+				</div>
+	    		{{ content | safe }}
+			</article>
+			{% include "layouts/cs_footer.html" %}
+		</div>
 	</body>
 </html>
