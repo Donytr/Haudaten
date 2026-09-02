@@ -2,10 +2,30 @@
     --text_outline: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
     --haudaten_gray: #B2B2B2;
     --haudaten_gray_light: #D4D4D4;
+    --haudaten_gray_lighter: #E7E7E7;
     --haudaten_green: #2E7B21;
     --haudaten_green_light: #448736;
     --haudaten_red: #E51632;
     --haudaten_red_hover: #BE132A;
+
+    --free_front_color: #FF6014;
+    --left_bloc_color: #eb161e;
+    --syndicalist_color: #004D01;
+    --progressive_color: #FF369F;
+    --socdem_color: #E84A4A;
+    --social_centre_color: #9FBCBB;
+    --agrarian_color: #FFDB00;
+    --liberal_color: #9097A6;
+    --conservative_color: #5190BD;
+    --national_peoples_color: #313B72;
+    --sovereignty_color: #542020;
+
+    --forward_color: #CA32CB;
+    --civic_democratic_color: #62D3D2;
+    --national_unity_color: #746B61;
+    --centre_color: #6E9FBF;
+    --lutheran_civic_color: #3A6998;
+    --stability_color: #448736;
 
     --topnav-height: 1.8rem;
 }
@@ -26,8 +46,8 @@ div.twoColumn { /* Two-column layout (for entry pages) */
 article {
     margin-top: var(--topnav-height);
     padding: 2rem;
-    display: flex;
-    flex-direction: column;
+    /*display: flex;
+    flex-direction: column; */
     min-height: 90vh; /* To force footer to the bottom of the page */
 }
 
@@ -50,6 +70,7 @@ nav.sidebar {
     grid-column: 1 / 2;
     border-right: 2px solid black;
     overflow-y: scroll;
+    overflow-x: hidden;
     background-color: var(--haudaten_gray_light);
 }
 nav.sidebar ul {
@@ -65,8 +86,8 @@ nav.sidebar ul li {
 nav.sidebar ul li h2 {
     text-align: center;
     margin: 0;
-    padding: 0.5rem;
-    font-size: 1.25rem;
+    padding: 0.25rem;
+    font-size: 1.1rem;
     color: white;
     text-shadow: var(--text_outline);
     background-color: var(--haudaten_gray);
@@ -81,13 +102,11 @@ nav.sidebar ul li a {
 
 /* Topnav */
 nav.topContainer {
-    display: fixed;
+    position: fixed;
     top: 0;
     width: 100%;
     max-height: var(--topnav-height);
     padding: 0;
-    position: fixed;
-    top: 0;
     z-index: 999;
 }
 div.topnav {
@@ -119,7 +138,6 @@ div.header {
     display: block;
     padding: 2rem 1rem;
     margin: -2rem -2rem 0.5rem -2rem;
-    background-color: var(--haudaten_green);
     color: white;
     border-bottom: 1px solid black;
     text-shadow: var(--text_outline);
@@ -130,7 +148,6 @@ nav.breadcrumb {
     display: block;
     padding: 0.5rem 1rem 0.5rem 2.5rem;
     margin: -2rem -2rem 1.25rem -2rem;
-    background-color: var(--haudaten_green_light);
     color: white;
     border-bottom: 2px solid black;
     border-top: 1px solid black;
@@ -152,6 +169,7 @@ footer {
     text-align: center;
     grid-column: 2 / 3;
     grid-row: 2 / 3;
+    margin-left: 2px;
 }
 
 /* Headings */
@@ -168,14 +186,69 @@ p {
 p.aboveH1 {
     margin: 0;
     text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
 }
 article h2 {
     border-bottom: 1px solid black;
 }
 
 article h3 {
-    margin-top: 0;
-    margin-bottom: 0;
+    margin-bottom: 0.1rem;
+}
+.b {
+    font-weight: bold;
+}
+.i {
+    font-style: italic;
+}
+.c {
+    text-align: center;
+}
+
+/* images */
+figure {
+    margin: 0 0 1rem 1rem;
+    background-color: var(--haudaten_gray_light);
+    border: 1px solid black;
+}
+figure.imgRight {
+    float: right;
+}
+figure img {
+    border-bottom: 1px solid black;
+}
+figcaption {
+    padding: 0.2rem 0.5rem;
+}
+
+/* tables */
+table, td, th {
+    border: 1px solid black;
+}
+table {
+    border-collapse: collapse;
+}
+table.w {
+    width: 100%
+}
+td, th {
+    padding: 0.2rem 0.35rem;
+}
+th {
+    background-color: var(--haudaten_gray_light)
+}
+td {
+    background-color: var(--haudaten_gray_lighter)
+}
+.h21 { /* for party color cells in tables */
+    height: 21px;
+}
+
+/* Lists */
+
+li.listLevelTwo {
+    margin-left: 1.5rem;
 }
 
 /* Media queries */

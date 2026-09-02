@@ -5,10 +5,10 @@
         src: url(Tektur.ttf);
 }
 @font-face { /* text */
-        font-family: 'Oxanium';
+        font-family: 'Blinker';
         font-style: normal;
         font-weight: normal;
-        src: url(Oxanium.ttf);
+        src: url(Blinker-Regular.ttf);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -16,5 +16,5 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 body {
-    font-family: 'Oxanium', sans-serif;
+    font-family: 'Blinker', sans-serif;
 }

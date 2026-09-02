@@ -18,8 +18,10 @@ export default function (eleventyConfig) {
 	eleventyConfig.setOutputDirectory('_site');
 	eleventyConfig.addPassthroughCopy("./src/_css/");
 	eleventyConfig.addPassthroughCopy("./src/_fonts/");
+	eleventyConfig.addPassthroughCopy("./src/_img/");
 	eleventyConfig.addWatchTarget("./src/_css/");
 	eleventyConfig.addWatchTarget("./src/_fonts/");
+	eleventyConfig.addWatchTarget("./src/_img/");
 }
 
 export const config = {
